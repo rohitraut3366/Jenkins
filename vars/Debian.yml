@@ -9,6 +9,6 @@ dpackage:
       url: "deb https://pkg.jenkins.io/debian-stable binary/"
    key: "https://pkg.jenkins.io/debian-stable/jenkins.io.key"
 
-dsoftware:
+Debian_software:
    java: "{{ java }}"
    jenkins: "{{ jenkins }}"
