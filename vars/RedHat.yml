@@ -3,7 +3,7 @@
 java: "java-1.8.0-openjdk"
 jenkins: "jenkins"
 
-rpackage:
+RedHat_package:
     rpm:
        name: "Jenkins"
        url: "http://pkg.jenkins.io/redhat"

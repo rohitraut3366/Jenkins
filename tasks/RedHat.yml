@@ -3,19 +3,21 @@
 
 - name: Add jenkin package  gpgkey
   rpm_key:
-      key: "{{ rpackage.key }}"
+      key: "{{ RedHat_package.key }}"
       state: present
 
 - name: jenkins package repository
   yum_repository:
       file: "jenkins"
-      name: "{{ rpackage.rpm.name }}"
-      baseurl: "{{ rpackage.rpm.url }}"
-      gpgkey: "{{ rpackage.key }}"
-      description: "{{ rpackage.rpm.description }}"
+      name: "{{ RedHat_package.rpm.name }}"
+      baseurl: "{{ RedHat_package.rpm.url }}"
+      gpgkey: "{{ RedHat_package.key }}"
+      description: "{{ RedHat_package.rpm.description }}"
 
-- name: "Install Java and Jenkins"
+
+- name: "{{ jenkins_package_state }} Java and Jenkins"
   package:
       name: "{{ item.value }}"
       state: "{{ jenkins_package_state }}"
-  loop: "{{ lookup('dict', rsoftware) }}"
+  loop: "{{ lookup('dict', RedHat_software) }}"
+  register: installation_status

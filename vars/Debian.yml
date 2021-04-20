@@ -3,7 +3,7 @@
 java: "openjdk-8-jdk"
 jenkins: "jenkins"
 
-dpackage:
+Debian_package:
    repo:
       name: "jenkins"
       url: "deb https://pkg.jenkins.io/debian-stable binary/"
