@@ -17,4 +17,5 @@
 - name: "Install Java and Jenkins"
   package:
       name: "{{ item.value }}"
+      state: "{{ jenkins_package_state }}"
   loop: "{{ lookup('dict', rsoftware) }}"
